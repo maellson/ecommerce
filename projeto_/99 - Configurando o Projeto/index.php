@@ -8,7 +8,7 @@ $app->config('debug', true);
 
 $app->get('/', function() {
     
-	echo "OK! Estou na home da página!";
+	echo "OK";
 
 });
 
