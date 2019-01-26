@@ -29,11 +29,13 @@
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Categorias</h2>
                         <ul>
-                            <li><a href="#">Categoria Um</a></li>
-                            <li><a href="#">Categoria Dois</a></li>
-                            <li><a href="#">Categoria Três</a></li>
-                            <li><a href="#">Categoria Quarto</a></li>
-                            <li><a href="#">Categoria Cinco</a></li>
+                            <li><a href="#">Eletrônicos</a></li>
+                            <li><a href="#">Moda Masculina</a></li>
+                            <li><a href="#">Moda Feminina</a></li>
+                            <li><a href="#">Mamãe & Bebê</a></li>
+                            <li><a href="#">Telefones e Acessórios</a></li>
+                            <li><a href="#">Beleza e Saúde</a></li>
+                            <li><a href="#">Relógios</a></li>                     
                         </ul>                        
                     </div>
                 </div>
