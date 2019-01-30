@@ -13,9 +13,9 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet"href="/RES/admin/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/RES/admin/dist/css/AdminLTE.min.css">
   <!-- iCheck -->
-  <link rel="stylesheet"href="/RES/admin/plugins/iCheck/square/blue.css">
+  <link rel="stylesheet" href="/RES/admin/plugins/iCheck/square/blue.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -67,7 +67,7 @@
     </div>
     <!-- /.social-auth-links -->
 
-    <a href="#">Esqueci minha senha</a><br>
+    <a href="/admin/forgot">Esqueci minha senha</a><br>
     <a href="register.html" class="text-center">Registrar novo usuário</a>
 
   </div>

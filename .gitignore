@@ -1,1 +1,5 @@
 /nbproject/private/
+vendor/hcodebr/php-classes/src/DB/Sql.php
+vendor/hcodebr/php-classes/src/Mailer.php
+
+
