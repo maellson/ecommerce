@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Airmail Ping</title>
+  <title>Campina Imports-Mail</title>
   <style type="text/css">
 
   * {
@@ -365,13 +365,14 @@
   <div align="center">
     <table class="head-wrap w320 full-width-gmail-android" bgcolor="#f9f8f8" cellpadding="0" cellspacing="0" border="0">
       <tr>
-        <td background="https://www.filepicker.io/api/file/UOesoVZTFObSHCgUDygC" bgcolor="#ffffff" width="100%" height="8" valign="top">
+        <td background="https://www.filepicker.io/api/file/UOesoVZTFObSHCgUDygC" bgcolor="#ffffff" width="100%" height="8" valign="top" >
           <!--[if gte mso 9]>
           <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;height:8px;">
             <v:fill type="tile" src="https://www.filepicker.io/api/file/UOesoVZTFObSHCgUDygC" color="#ffffff" />
             <v:textbox inset="0,0,0,0">
           <![endif]-->
-          <div height="8">
+          <div height="8" >
+              
           </div>
           <!--[if gte mso 9]>
             </v:textbox>
@@ -384,7 +385,7 @@
           <div class="content">
             <span class="brand">
               <a href="#">
-                Hcode Store
+                Campina Imports
               </a>
             </span>
           </div>

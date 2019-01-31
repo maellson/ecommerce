@@ -25,7 +25,7 @@ class User extends Model{
 		}
 
 		$data = $results[0];
-		if(password_verify($password, $data["despassword"])===true)//verifica se o password vindo como parametro é igual so do banco "despassword"
+		if(password_verify($password, $data["despassword"])===true)//verifica se o password vindo como parametro é igual ao do banco "despassword"
 		{
 			$user = new User();
 			$user->setData($data);
@@ -189,10 +189,12 @@ class User extends Model{
                  
                  $link = "http://ecommerce/admin/forgot/reset?code=$code";
                  
-                 $mailer = new Mailer($data["desemail"], $data["desperson"],
+                 //Chamando o construtor da classe mailer
+                 $mailer = new Mailer($data["desemail"],
+                         $data["desperson"],
                          "redefnicao de senha da loja",
                          "forgot", 
-                         array("name"=>$data["desperson"],"link"=>$link));
+                         array("name"=>$data["desperson"],"link"=>$link));// o nome e o link entram no metodo assign para serem jogados no forgot de views.
                  
                  $mailer->send();//envio do email
                  
@@ -200,6 +202,63 @@ class User extends Model{
                   
               } 
         }
+        
+    }
+    public static function validForgotDecrypt($code) {
+        
+        
+       $idrecovery= mcrypt_decrypt(
+                MCRYPT_RIJNDAEL_128,
+                User::SECRET, 
+                base64_decode($code),
+                MCRYPT_MODE_ECB
+                );
+       
+       $sql = new Sql();
+       $results = $sql->select("
+           
+            SELECT * FROM tb_userspasswordsrecoveries a
+            INNER JOIN tb_users b USING(iduser)
+            INNER JOIN tb_persons c USING(idperson)
+
+            where a.idrecovery = :idrecovery
+
+            AND
+
+            a.dtrecovery IS NULL
+            AND
+            date_add(a.dtregister, interval 1 HOUR) >= now();", array (
+                ":idrecovery"=>$idrecovery
+            ));
+       
+       if(count($results)===0){
+           throw new \Exception("Erro ao recuperar a senha. Tente novamente!");
+       } else{
+           return $results[0];
+       }
+        
+    } 
+    
+    public static function setForgotUsed($idrecovery){
+        
+        $sql = new Sql();
+        $sql->query("UPDATE tb_userspasswordsrecoveries SET  dtrecovery = NOW() WHERE idrecovery = :idrecovery",
+            array(
+            ":idrecovery"=>$idrecovery
+        ));
+    }
+    
+    
+    public function setPassword($password) {
+        
+        $sql = new Sql();
+        $sql->query("UPDATE tb_users SET despassword = :password WHERE iduser = :iduser",
+                array(
+                    ":password"=>$password,
+                    ":iduser"=>$this->getiduser()
+                    
+            
+        ));
         
     }
 
