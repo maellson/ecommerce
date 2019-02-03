@@ -7,7 +7,16 @@ class Model {
 
 	private $values = [];
 
-	public function __call($name, $args)
+	/**
+         * 
+         * @param type $name
+         * @param type $args
+         * A funcao call ler o metodo que estar sendo chamado pelas classes extendidas
+         * ele é capaz de ler o nome da função e seus argumentos.
+         * @return retorna o metodo get ou set dinamicamente de acordo com o que foi chamado 
+         * pela classe que extende o Model.
+         */
+        public function __call($name, $args)
 	{
 
 		$method = substr($name, 0, 3);
@@ -15,7 +24,12 @@ class Model {
 
 		switch ($method) {
                     case "get": 
-                       return $this->values[$fieldName];
+                        /**este método verifica se o atributo chamado pelo metodo get já tem
+                         * valor carregado, por exemplo ao cadastrar uma categoria, 
+                         * o get pode necessitar de um idcategory que ainda não estava no
+                         * banco em caso de atualização 
+                         **/
+                       return (isset ($this->values[$fieldName]))? $this->values[$fieldName]: NULL;
                     break;
                 
                     case "set":
@@ -26,6 +40,13 @@ class Model {
                 
 
 	}
+        /**
+         * 
+         * @param type $data
+         * Recebe um objeto de uma classe como array e 
+         * de acordo com a chave e valor de cada registro 
+         * atibue para a classe que extende este Model,
+         */
         public function setData($data = array()) {
             
             foreach ($data as $key => $value) {

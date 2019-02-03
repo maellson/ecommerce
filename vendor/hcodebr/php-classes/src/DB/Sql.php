@@ -19,6 +19,11 @@ class Sql {
 			Sql::USERNAME,
 			Sql::PASSWORD
 		);
+                //ENVIAR E RECEBER DADOS COM CHARSET UTF8
+                    $this->conn->exec("set names utf8");
+		    $this->conn->exec('SET character_set_connection=utf8');
+		    $this->conn->exec('SET character_set_client=utf8');
+		    $this->conn->exec('SET character_set_results=utf8');
 
 	}
 

@@ -38,6 +38,7 @@ class User extends Model{
 		} else {
 
 			throw new \Exception('Usuário inexistente ou senha inválida!');
+                        
 		}
 
 	}
