@@ -38,7 +38,13 @@ class Page{
 
 	}
 
-	
+	private function setData($data = array()){//funcao setData usada nas demais para fazer o assig do Slim com Rain
+
+			foreach ($data as $key => $value) {
+				$this->tpl->assign($key,$value);
+				
+			}
+	}
 
 	public function setTpl($name, $data = array(),$returnHTML = false){
 
@@ -52,13 +58,7 @@ class Page{
 
 	}
 
-	private function setData($data = array()){//funcao setData usada nas demais para fazer o assig do Slim com Rain
-
-			foreach ($data as $key => $value) {
-				$this->tpl->assign($key,$value);
-				
-			}
-	}
+	
 	
 }
 
